@@ -1,38 +1,177 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+:root {
+  --Mont: "Montserrat", serif;
+  --AB: #cb997e;
+  --DS: #ddbea9;
+  --CP: #ffe8d6;
+  --AG: #b7b7a4;
+  --AE: #a5a58d;
+  --EY: #6b705c;
+  --card: rgba(0, 0, 0, 0.4);
+  --cardtwo: rgba(0, 0, 0, 0.5);
+  --cardthree: rgba(255, 255, 255, 0.4);
+}
+
+img {
+  width: 100px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: var(--Mont);
+  box-sizing: border-box;
+  color: var(--CP);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  margin: 0;
+  background: var(--DS);
+  /* background: url(images/bg/Outset\ Island\ day.jpg) center/ cover no-repeat fixed; */
+}
+
+.container {
+  
+  /* background: var(--AG); */
+  /* padding: 2em; */
+  width: 100%;
+  min-width: 400px;
+  height: 100vh;
+  /* margin: 1em; */
+}
+
+.current {
+  opacity: 0%;
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+  /* height: 3px; */
+}
+
+.current.visible {
+  opacity: 100%;
+  transition: opacity 0.4s ease-in;
+}
+
+@media only screen and (max-width: 600px) {
+  .current {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .future {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  height: 5em;
+}
+
+.form {
+  background: #fff;
+  border-radius: 2rem;
+  padding: 0.6rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchBar {
+  border: none;
+  width: 300px;
+  color: var(--EY);
+}
+
+.searchButton {
+  border: none;
+  background: none;
+  color: var(--EY);
+}
+
+.searchButton:hover{
+    color: var(--AB);
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}
+
+.right {
+  background-color: var(--card);
+  border-radius: 24px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.temp {
+  text-align: center;
+  font-size: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.status {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* future items */
+
+.future {
+  opacity: 0%;
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+  text-align: center;
+  background-color: var(--card);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.future.visible {
+    opacity: 100%;
+    transition: opacity 0.4s ease-in;
+}
+
+.tom,
+.twoDays,
+.threeDays {
+  opacity: 0%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  justify-items: center;
+  align-items: center;
+  min-width: 250px;
+  min-height: 200px;
+  border-radius: 24px;
+  margin: 25px;
+}
+
+.tom.visible {
+  opacity: 100%;
+  transition: opacity 0.6s ease-in;
+}
+
+.twoDays.visible {
+  opacity: 100%;
+  transition: opacity 0.8s ease-in;
+}
+
+.threeDays.visible {
+  opacity: 100%;
+  transition: opacity 1s ease-in;
 }
